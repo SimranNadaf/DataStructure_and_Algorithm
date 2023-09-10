@@ -1,36 +1,39 @@
-#include<stdio.h>
+#include <stdio.h>
 
-void printArray(int *A, int n){
+void printArray(int *A, int n)
+{
     for (int i = 0; i < n; i++)
     {
-        printf("%d ",A[i]);
+        printf("%d ", A[i]);
     }
     printf("\n");
 }
 
-void SelectonSort(int *A, int n){
-    printf("Selection sort is running ......\n");
+void SelectonSort(int *A, int n)
+{
+    printf("Selection sort is Running ......\n");
     int indexOfMin, temp;
-    for (int i = 0; i < n-1; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        indexOfMin=i;
-        for (int j = i+1; j < n; j++)
+        indexOfMin = i;
+        for (int j = i + 1; j < n; j++)
         {
-            if(A[j] < A[indexOfMin]){
-                indexOfMin=j;
+            if (A[j] < A[indexOfMin])
+            {
+                indexOfMin = j;
             }
         }
-        temp=A[i];
-        A[i]=A[indexOfMin];
-        A[indexOfMin]=temp;
+        temp = A[i];
+        A[i] = A[indexOfMin];
+        A[indexOfMin] = temp;
     }
-    
 }
 
-int main(){
+int main()
+{
 
-    int A[]={12,5,2,0,4};
-    int n=5;
+    int A[] = {12, 5, 2, 0, 4};
+    int n = 5;
     printArray(A, n);
     SelectonSort(A, n);
     printArray(A, n);
